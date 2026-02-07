@@ -1,0 +1,870 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PythonFromZero - Learn Python for Absolute Beginners</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#4b6bfb', dark: '#0f172a' },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['Consolas', 'monospace'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .lesson { display: none; }
+        .lesson.active { display: block; }
+        .nav-btn.active { background-color: #4b6bfb; color: white; }
+        pre { white-space: pre-wrap; word-wrap: break-word; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-10 bg-white/90 backdrop-blur-sm border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <h1 class="text-xl font-bold text-primary cursor-pointer" onclick="showLesson(0)">PythonFromZero</h1>
+                <nav class="hidden md:flex gap-2">
+                    <button onclick="showLesson(0)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100 transition active">Home</button>
+                    <button onclick="showLesson(1)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100 transition">L1</button>
+                    <button onclick="showLesson(2)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100 transition">L2</button>
+                    <button onclick="showLesson(3)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100 transition">L3</button>
+                    <button onclick="showLesson(4)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100 transition">L4</button>
+                    <button onclick="showLesson(5)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100 transition">L5</button>
+                    <button onclick="showLesson(6)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100 transition">L6</button>
+                    <button onclick="showLesson(7)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100 transition">L7</button>
+                    <button onclick="showLesson(8)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100 transition">L8</button>
+                    <button onclick="showLesson(9)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100 transition">L9</button>
+                    <button onclick="showLesson(10)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100 transition">L10</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="md:hidden bg-white border-b border-slate-200 overflow-x-auto">
+        <div class="flex px-4 py-2 gap-2 min-w-max">
+            <button onclick="showLesson(0)" class="nav-btn px-3 py-1 rounded-lg text-sm bg-primary text-white">Home</button>
+            <button onclick="showLesson(1)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100">L1</button>
+            <button onclick="showLesson(2)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100">L2</button>
+            <button onclick="showLesson(3)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100">L3</button>
+            <button onclick="showLesson(4)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100">L4</button>
+            <button onclick="showLesson(5)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100">L5</button>
+            <button onclick="showLesson(6)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100">L6</button>
+            <button onclick="showLesson(7)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100">L7</button>
+            <button onclick="showLesson(8)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100">L8</button>
+            <button onclick="showLesson(9)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100">L9</button>
+            <button onclick="showLesson(10)" class="nav-btn px-3 py-1 rounded-lg text-sm hover:bg-slate-100">L10</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+
+        <!-- HOME / LESSON 0 -->
+        <section id="lesson0" class="lesson active">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Learn Python from Zero</h2>
+                <p class="text-xl text-slate-600">10 beginner-friendly lessons. No experience required.</p>
+            </div>
+
+            <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
+                <p class="text-lg">The number one rule for beginners: <strong>Don't try to memorize everything.</strong> Just type things, see what happens, and break things on purpose. Making mistakes is how you learn.</p>
+            </div>
+
+            <div class="grid gap-4 md:grid-cols-2">
+                <button onclick="showLesson(1)" class="block w-full text-left p-6 bg-white rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition-all">
+                    <span class="text-sm font-bold text-primary">Lesson 1</span>
+                    <h3 class="text-lg font-bold mt-1">Getting Started</h3>
+                    <p class="text-slate-600 text-sm mt-2">Install Python, write your first program, understand print()</p>
+                </button>
+
+                <button onclick="showLesson(2)" class="block w-full text-left p-6 bg-white rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition-all">
+                    <span class="text-sm font-bold text-primary">Lesson 2</span>
+                    <h3 class="text-lg font-bold mt-1">Variables</h3>
+                    <p class="text-slate-600 text-sm mt-2">Store data, understand types, learn the assignment operator</p>
+                </button>
+
+                <button onclick="showLesson(3)" class="block w-full text-left p-6 bg-white rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition-all">
+                    <span class="text-sm font-bold text-primary">Lesson 3</span>
+                    <h3 class="text-lg font-bold mt-1">Strings</h3>
+                    <p class="text-slate-600 text-sm mt-2">Work with text, concatenate, format, and use string methods</p>
+                </button>
+
+                <button onclick="showLesson(4)" class="block w-full text-left p-6 bg-white rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition-all">
+                    <span class="text-sm font-bold text-primary">Lesson 4</span>
+                    <h3 class="text-lg font-bold mt-1">Numbers & Math</h3>
+                    <p class="text-slate-600 text-sm mt-2">Integers, floats, operators, and the math module</p>
+                </button>
+
+                <button onclick="showLesson(5)" class="block w-full text-left p-6 bg-white rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition-all">
+                    <span class="text-sm font-bold text-primary">Lesson 5</span>
+                    <h3 class="text-lg font-bold mt-1">Lists</h3>
+                    <p class="text-slate-600 text-sm mt-2">Create, access, modify, and loop through lists</p>
+                </button>
+
+                <button onclick="showLesson(6)" class="block w-full text-left p-6 bg-white rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition-all">
+                    <span class="text-sm font-bold text-primary">Lesson 6</span>
+                    <h3 class="text-lg font-bold mt-1">Dictionaries</h3>
+                    <p class="text-slate-600 text-sm mt-2">Key-value pairs, access, add, and update dictionary data</p>
+                </button>
+
+                <button onclick="showLesson(7)" class="block w-full text-left p-6 bg-white rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition-all">
+                    <span class="text-sm font-bold text-primary">Lesson 7</span>
+                    <h3 class="text-lg font-bold mt-1">If / Else</h3>
+                    <p class="text-slate-600 text-sm mt-2">Make decisions with conditions, elif, and logical operators</p>
+                </button>
+
+                <button onclick="showLesson(8)" class="block w-full text-left p-6 bg-white rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition-all">
+                    <span class="text-sm font-bold text-primary">Lesson 8</span>
+                    <h3 class="text-lg font-bold mt-1">Loops</h3>
+                    <p class="text-slate-600 text-sm mt-2">Repeat code with for loops, while loops, and range()</p>
+                </button>
+
+                <button onclick="showLesson(9)" class="block w-full text-left p-6 bg-white rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition-all">
+                    <span class="text-sm font-bold text-primary">Lesson 9</span>
+                    <h3 class="text-lg font-bold mt-1">Functions</h3>
+                    <p class="text-slate-600 text-sm mt-2">Write reusable code with def, parameters, and return values</p>
+                </button>
+
+                <button onclick="showLesson(10)" class="block w-full text-left p-6 bg-white rounded-xl border border-slate-200 hover:border-primary hover:shadow-lg transition-all">
+                    <span class="text-sm font-bold text-primary">Lesson 10</span>
+                    <h3 class="text-lg font-bold mt-1">File Handling</h3>
+                    <p class="text-slate-600 text-sm mt-2">Read from and write to files, work with text data</p>
+                </button>
+            </div>
+
+            <div class="mt-12 p-6 bg-blue-50 border border-blue-200 rounded-xl">
+                <h3 class="font-bold text-lg mb-2">💡 Pro Tip</h3>
+                <p>Complete the lessons in order. Each one builds on the previous. Type every example yourself - don't just copy and paste!</p>
+            </div>
+        </section>
+
+        <!-- LESSON 1: Getting Started -->
+        <section id="lesson1" class="lesson">
+            <div class="mb-8">
+                <button onclick="showLesson(0)" class="text-primary hover:underline mb-4">← Back to All Lessons</button>
+                <span class="text-sm font-bold text-primary">Lesson 1 of 10</span>
+                <h1 class="text-3xl font-bold mt-2">Getting Started</h1>
+                <p class="text-slate-600 mt-2">Install Python, write your first program, and understand how print() works.</p>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Step 1: Install Python</h2>
+                <ol class="list-decimal list-inside space-y-2 text-slate-700">
+                    <li>Go to <a href="https://python.org" class="text-primary hover:underline" target="_blank">python.org</a></li>
+                    <li>Click "Downloads" → Download the latest version</li>
+                    <li>Run the installer</li>
+                    <li><strong>IMPORTANT:</strong> Check "Add Python to PATH" before clicking Install!</li>
+                </ol>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Step 2: Your First Program</h2>
+                <p class="mb-4">Open any text editor (Notepad, VS Code, etc.) and type:</p>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">print("Hello World!")</pre>
+                </div>
+                <p class="mb-4">Save the file as <code class="bg-slate-200 px-1 rounded">hello.py</code></p>
+                <p class="mb-4">Open your terminal/command prompt and run:</p>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">python hello.py</pre>
+                </div>
+                <p>You should see: <code class="bg-slate-200 px-1 rounded">Hello World!</code></p>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Understanding print()</h2>
+                <p class="mb-4"><code class="bg-slate-200 px-1 rounded">print()</code> displays text on your screen. Whatever you put inside the parentheses gets shown.</p>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">print("Python is fun!")
+print(2 + 2)
+print("My age is", 25)</pre>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                <p class="font-bold">💡 Try This:</p>
+                <p class="mt-1">Change the text inside <code class="bg-slate-200 px-1 rounded">print()</code> to say something about yourself. Run it again!</p>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Common Mistakes</h2>
+                <ul class="space-y-2 text-slate-700">
+                    <li><code class="bg-slate-200 px-1 rounded">Print("Hello")</code> ❌ Capital P doesn't work. Use lowercase <code class="bg-slate-200 px-1 rounded">print</code></li>
+                    <li><code class="bg-slate-200 px-1 rounded">print("Hello"</code> ❌ Missing closing parenthesis</li>
+                    <li><code class="bg-slate-200 px-1 rounded">print(Hello)</code> ❌ Text needs quotes: <code class="bg-slate-200 px-1 rounded">"Hello"</code></li>
+                </ul>
+            </div>
+
+            <div class="flex justify-between mt-8">
+                <button onclick="showLesson(0)" class="px-4 py-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition">← Back to Lessons</button>
+                <button onclick="showLesson(2)" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition">Lesson 2: Variables →</button>
+            </div>
+        </section>
+
+        <!-- LESSON 2: Variables -->
+        <section id="lesson2" class="lesson">
+            <div class="mb-8">
+                <button onclick="showLesson(0)" class="text-primary hover:underline mb-4">← Back to All Lessons</button>
+                <span class="text-sm font-bold text-primary">Lesson 2 of 10</span>
+                <h1 class="text-3xl font-bold mt-2">Variables</h1>
+                <p class="text-slate-600 mt-2">Store data in named containers. Learn about types and the assignment operator.</p>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">What is a Variable?</h2>
+                <p class="mb-4">A variable is like a labeled box. You put a value inside, and you can use the label to get it back later.</p>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">name = "Alice"
+age = 25
+height = 5.6
+is_student = True</pre>
+                </div>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-6">
+                <p class="font-bold">⚠️ Important:</p>
+                <p class="mt-1">The <code class="bg-slate-200 px-1 rounded">=</code> sign does NOT mean "equals" like in math. It means <strong>assign</strong>. It puts the value on the right into the variable on the left.</p>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Data Types</h2>
+                <table class="w-full text-left mb-4">
+                    <thead>
+                        <tr class="border-b">
+                            <th class="py-2">Type</th>
+                            <th class="py-2">Example</th>
+                            <th class="py-2">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-700">
+                        <tr class="border-b"><td class="py-2"><code>str</code></td><td class="py-2"><code>"Hello"</code></td><td class="py-2">Text (string)</td></tr>
+                        <tr class="border-b"><td class="py-2"><code>int</code></td><td class="py-2"><code>25</code></td><td class="py-2">Whole number</td></tr>
+                        <tr class="border-b"><td class="py-2"><code>float</code></td><td class="py-2"><code>5.6</code></td><td class="py-2">Decimal number</td></tr>
+                        <tr><td class="py-2"><code>bool</code></td><td class="py-2"><code>True</code> / <code>False</code></td><td class="py-2">True or False value</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Using Variables</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">name = "Bob"
+age = 30
+
+print("Name:", name)
+print("Age:", age)
+print("Next year:", age + 1)</pre>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                <p class="font-bold">💡 Variable Naming Rules:</p>
+                <ul class="mt-2 space-y-1 text-slate-700">
+                    <li>✅ Start with a letter or underscore: <code>name</code>, <code>_age</code></li>
+                    <li>✅ Use letters, numbers, underscores: <code>user_name1</code></li>
+                    <li>❌ No spaces: <code>my name</code> is invalid</li>
+                    <li>❌ Can't start with number: <code>1name</code> is invalid</li>
+                    <li>✅ Use lowercase with underscores: <code>first_name</code></li>
+                </ul>
+            </div>
+
+            <div class="flex justify-between mt-8">
+                <button onclick="showLesson(1)" class="px-4 py-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition">← Lesson 1</button>
+                <button onclick="showLesson(3)" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition">Lesson 3: Strings →</button>
+            </div>
+        </section>
+
+        <!-- LESSON 3: Strings -->
+        <section id="lesson3" class="lesson">
+            <div class="mb-8">
+                <button onclick="showLesson(0)" class="text-primary hover:underline mb-4">← Back to All Lessons</button>
+                <span class="text-sm font-bold text-primary">Lesson 3 of 10</span>
+                <h1 class="text-3xl font-bold mt-2">Strings</h1>
+                <p class="text-slate-600 mt-2">Work with text: create, combine, format, and use string methods.</p>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Creating Strings</h2>
+                <p class="mb-4">Use single quotes <code>'</code> or double quotes <code>"</code>:</p>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">name = "Alice"
+message = 'Hello'
+text = "It's a great day"
+quote = 'She said "Hi"'</pre>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">f-strings (String Formatting)</h2>
+                <p class="mb-4">The easiest way to insert variables into strings:</p>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">name = "Alice"
+age = 25
+
+print(f"Hello, {name}!")
+print(f"You are {age} years old")
+print(f"Next year: {age + 1}")</pre>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">String Methods</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">text = "  Hello World  "
+
+print(text.lower())      # "  hello world  "
+print(text.upper())      # "  HELLO WORLD  "
+print(text.strip())      # "Hello World"
+print(text.replace("World", "Python"))
+
+name = "alice"
+print(name.capitalize()) # "Alice"
+
+sentence = "a,b,c"
+print(sentence.split(","))  # ['a', 'b', 'c']</pre>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Indexing</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">word = "Python"
+
+print(word[0])   # 'P' (first character)
+print(word[1])   # 'y'
+print(word[-1])  # 'n' (last character)
+print(word[0:3]) # 'Pyt' (characters 0, 1, 2)
+print(len(word)) # 6 (length)</pre>
+                </div>
+            </div>
+
+            <div class="flex justify-between mt-8">
+                <button onclick="showLesson(2)" class="px-4 py-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition">← Lesson 2</button>
+                <button onclick="showLesson(4)" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition">Lesson 4: Numbers →</button>
+            </div>
+        </section>
+
+        <!-- LESSON 4: Numbers & Math -->
+        <section id="lesson4" class="lesson">
+            <div class="mb-8">
+                <button onclick="showLesson(0)" class="text-primary hover:underline mb-4">← Back to All Lessons</button>
+                <span class="text-sm font-bold text-primary">Lesson 4 of 10</span>
+                <h1 class="text-3xl font-bold mt-2">Numbers & Math</h1>
+                <p class="text-slate-600 mt-2">Integers, floats, operators, and the math module.</p>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Basic Operators</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">add      = 5 + 2   # 7
+subtract = 5 - 2   # 3
+multiply = 5 * 2   # 10
+divide   = 5 / 2   # 2.5 (always float!)
+
+floor_div = 5 // 2  # 2 (whole number division)
+modulo    = 5 % 2   # 1 (remainder)
+power     = 5 ** 2  # 25 (5 squared)</pre>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">The math Module</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">import math
+
+print(math.sqrt(16))      # 4.0
+print(math.pi)            # 3.14159...
+print(math.ceil(4.2))     # 5 (round up)
+print(math.floor(4.8))    # 4 (round down)
+print(math.pow(2, 3))     # 8.0</pre>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Converting Between Types</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm"># String to number:
+num = int("42")        # 42
+decimal = float("3.14") # 3.14
+
+# Number to string:
+text = str(42)         # "42"
+
+# Float to int (truncates):
+whole = int(3.99)      # 3 (not 4!)</pre>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                <p class="font-bold">💡 Common Mistake:</p>
+                <p class="mt-1"><code>5 / 2</code> gives <code>2.5</code> (float), not <code>2</code>. Use <code>//</code> for integer division: <code>5 // 2</code> = <code>2</code></p>
+            </div>
+
+            <div class="flex justify-between mt-8">
+                <button onclick="showLesson(3)" class="px-4 py-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition">← Lesson 3</button>
+                <button onclick="showLesson(5)" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition">Lesson 5: Lists →</button>
+            </div>
+        </section>
+
+        <!-- LESSON 5: Lists -->
+        <section id="lesson5" class="lesson">
+            <div class="mb-8">
+                <button onclick="showLesson(0)" class="text-primary hover:underline mb-4">← Back to All Lessons</button>
+                <span class="text-sm font-bold text-primary">Lesson 5 of 10</span>
+                <h1 class="text-3xl font-bold mt-2">Lists</h1>
+                <p class="text-slate-600 mt-2">Store multiple items, access by index, add, remove, and loop through lists.</p>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Creating Lists</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">fruits = ["apple", "banana", "orange"]
+numbers = [1, 2, 3, 4, 5]
+mixed = ["hello", 42, 3.14, True]
+empty = []</pre>
+                </div>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-6">
+                <p class="font-bold">⚠️ Remember:</p>
+                <p class="mt-1">Python starts counting at <strong>0</strong>, not 1! This is the #1 beginner mistake.</p>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Accessing & Modifying</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">fruits = ["apple", "banana", "orange"]
+
+print(fruits[0])   # "apple"
+print(fruits[-1])  # "orange" (last)
+print(len(fruits)) # 3
+
+# Change an item
+fruits[0] = "mango"
+
+# Add items
+fruits.append("grape")
+fruits.insert(1, "kiwi")
+
+# Remove items
+fruits.remove("banana")
+deleted = fruits.pop(0)</pre>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Looping Through Lists</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">fruits = ["apple", "banana", "orange"]
+
+# Method 1: Loop through items
+for fruit in fruits:
+    print(f"I like {fruit}")
+
+# Method 2: Loop with index
+for i in range(len(fruits)):
+    print(f"{i}: {fruits[i]}")
+
+# Method 3: Using enumerate
+for index, fruit in enumerate(fruits):
+    print(f"{index}: {fruit}")</pre>
+                </div>
+            </div>
+
+            <div class="flex justify-between mt-8">
+                <button onclick="showLesson(4)" class="px-4 py-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition">← Lesson 4</button>
+                <button onclick="showLesson(6)" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition">Lesson 6: Dictionaries →</button>
+            </div>
+        </section>
+
+        <!-- LESSON 6: Dictionaries -->
+        <section id="lesson6" class="lesson">
+            <div class="mb-8">
+                <button onclick="showLesson(0)" class="text-primary hover:underline mb-4">← Back to All Lessons</button>
+                <span class="text-sm font-bold text-primary">Lesson 6 of 10</span>
+                <h1 class="text-3xl font-bold mt-2">Dictionaries</h1>
+                <p class="text-slate-600 mt-2">Store key-value pairs. Access data by name, not by position.</p>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">What is a Dictionary?</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">person = {
+    "name": "Alice",
+    "age": 25,
+    "city": "New York"
+}
+
+print(person["name"])  # "Alice"
+print(person["age"])   # 25</pre>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Adding & Changing</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">person = {"name": "Alice", "age": 25}
+
+# Change value
+person["age"] = 26
+
+# Add new key
+person["city"] = "Boston"
+
+# Remove key
+del person["age"]
+value = person.pop("city")
+
+# Safe access
+age = person.get("age", 0)  # Returns 0 if not found</pre>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Looping Through Dictionaries</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">person = {"name": "Alice", "age": 25, "city": "NYC"}
+
+# Loop through keys
+for key in person:
+    print(key)
+
+# Loop through values
+for value in person.values():
+    print(value)
+
+# Loop through key-value pairs
+for key, value in person.items():
+    print(f"{key}: {value}")</pre>
+                </div>
+            </div>
+
+            <div class="flex justify-between mt-8">
+                <button onclick="showLesson(5)" class="px-4 py-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition">← Lesson 5</button>
+                <button onclick="showLesson(7)" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition">Lesson 7: If/Else →</button>
+            </div>
+        </section>
+
+        <!-- LESSON 7: If/Else -->
+        <section id="lesson7" class="lesson">
+            <div class="mb-8">
+                <button onclick="showLesson(0)" class="text-primary hover:underline mb-4">← Back to All Lessons</button>
+                <span class="text-sm font-bold text-primary">Lesson 7 of 10</span>
+                <h1 class="text-3xl font-bold mt-2">If / Else</h1>
+                <p class="text-slate-600 mt-2">Make decisions in your code. Run different blocks based on conditions.</p>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-6">
+                <p class="font-bold">⚠️ Most Important Rule:</p>
+                <p class="mt-1">Python uses <strong>indentation</strong> (spaces at the start of a line) to know what code belongs inside an if statement. This is NOT optional!</p>
+                <div class="bg-slate-900 rounded-lg p-3 mt-3">
+                    <pre class="text-green-400 font-mono text-xs">if age >= 18:
+    print("Adult")  # ← 4 spaces of indentation
+print("Done")  # ← No indentation, outside if</pre>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">If / Elif / Else</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">age = 20
+
+if age < 13:
+    print("Child")
+elif age < 18:
+    print("Teen")
+elif age < 65:
+    print("Adult")
+else:
+    print("Senior")
+
+# Output: Adult</pre>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Comparison & Logical Operators</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm"># Comparison: == != > < >= <=
+5 == 5   # True
+5 != 3   # True
+5 > 3    # True
+
+# Logical: and or not
+age = 25
+has_id = True
+
+if age >= 18 and has_id:
+    print("Can enter")
+
+if age < 18 or age > 65:
+    print("Discount eligible")
+
+if not False:
+    print("This runs")</pre>
+                </div>
+            </div>
+
+            <div class="flex justify-between mt-8">
+                <button onclick="showLesson(6)" class="px-4 py-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition">← Lesson 6</button>
+                <button onclick="showLesson(8)" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition">Lesson 8: Loops →</button>
+            </div>
+        </section>
+
+        <!-- LESSON 8: Loops -->
+        <section id="lesson8" class="lesson">
+            <div class="mb-8">
+                <button onclick="showLesson(0)" class="text-primary hover:underline mb-4">← Back to All Lessons</button>
+                <span class="text-sm font-bold text-primary">Lesson 8 of 10</span>
+                <h1 class="text-3xl font-bold mt-2">Loops</h1>
+                <p class="text-slate-600 mt-2">Repeat code automatically with for loops, while loops, and range().</p>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">For Loop</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">fruits = ["apple", "banana", "orange"]
+
+for fruit in fruits:
+    print(f"I like {fruit}")
+
+# Using range()
+for i in range(5):
+    print(i)  # 0, 1, 2, 3, 4
+
+for i in range(1, 6):
+    print(i)  # 1, 2, 3, 4, 5
+
+for i in range(0, 10, 2):
+    print(i)  # 0, 2, 4, 6, 8</pre>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">While Loop</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">count = 1
+while count <= 5:
+    print(count)
+    count = count + 1
+
+# Be careful of infinite loops!
+# while True:
+#     print("This never stops!")</pre>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Break and Continue</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm"># BREAK: Exit loop early
+for i in range(10):
+    if i == 5:
+        break
+    print(i)  # 0, 1, 2, 3, 4
+
+# CONTINUE: Skip to next iteration
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)  # 0, 1, 3, 4 (skips 2)</pre>
+                </div>
+            </div>
+
+            <div class="flex justify-between mt-8">
+                <button onclick="showLesson(7)" class="px-4 py-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition">← Lesson 7</button>
+                <button onclick="showLesson(9)" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition">Lesson 9: Functions →</button>
+            </div>
+        </section>
+
+        <!-- LESSON 9: Functions -->
+        <section id="lesson9" class="lesson">
+            <div class="mb-8">
+                <button onclick="showLesson(0)" class="text-primary hover:underline mb-4">← Back to All Lessons</button>
+                <span class="text-sm font-bold text-primary">Lesson 9 of 10</span>
+                <h1 class="text-3xl font-bold mt-2">Functions</h1>
+                <p class="text-slate-600 mt-2">Write reusable code with def, parameters, return values, and scope.</p>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Defining Functions</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Alice")
+greet("Bob")
+
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)  # 8</pre>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Default Parameters</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}!"
+
+print(greet("Alice"))           # Hello, Alice!
+print(greet("Bob", "Hi"))       # Hi, Bob!
+
+def create_user(username, active=True):
+    return {"username": username, "active": active}</pre>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Variable Scope</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm">global_var = "I'm global"
+
+def my_function():
+    local_var = "I'm local"
+    print(local_var)      # Works
+    print(global_var)     # Also works
+
+my_function()
+print(global_var)  # Works
+# print(local_var) # ERROR! Doesn't exist here</pre>
+                </div>
+            </div>
+
+            <div class="flex justify-between mt-8">
+                <button onclick="showLesson(8)" class="px-4 py-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition">← Lesson 8</button>
+                <button onclick="showLesson(10)" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition">Lesson 10: Files →</button>
+            </div>
+        </section>
+
+        <!-- LESSON 10: File Handling -->
+        <section id="lesson10" class="lesson">
+            <div class="mb-8">
+                <button onclick="showLesson(0)" class="text-primary hover:underline mb-4">← Back to All Lessons</button>
+                <span class="text-sm font-bold text-primary">Lesson 10 of 10</span>
+                <h1 class="text-3xl font-bold mt-2">File Handling</h1>
+                <p class="text-slate-600 mt-2">Read from and write to files. Work with text data and persist information.</p>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Reading Files</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm"># Recommended way (auto-closes)
+with open("myfile.txt", "r") as file:
+    content = file.read()
+    print(content)
+
+# Read line by line
+with open("myfile.txt", "r") as file:
+    for line in file:
+        print(line.strip())
+
+# Read all lines into list
+with open("myfile.txt", "r") as file:
+    lines = file.readlines()</pre>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">Writing Files</h2>
+                <div class="bg-slate-900 rounded-lg p-4 mb-4">
+                    <pre class="text-green-400 font-mono text-sm"># Write (overwrites existing!)
+with open("output.txt", "w") as file:
+    file.write("Hello, World!\n")
+    file.write("Second line\n")
+
+# Append (adds to end)
+with open("output.txt", "a") as file:
+    file.write("This is appended\n")
+
+# ⚠️ "w" mode DELETES existing content!</pre>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+                <h2 class="text-xl font-bold mb-4">File Modes</h2>
+                <table class="w-full text-left">
+                    <thead><tr class="border-b"><th class="py-2">Mode</th><th class="py-2">Description</th></tr></thead>
+                    <tbody class="text-slate-700">
+                        <tr class="border-b"><td class="py-2"><code>"r"</code></td><td class="py-2">Read (default, file must exist)</td></tr>
+                        <tr class="border-b"><td class="py-2"><code>"w"</code></td><td class="py-2">Write (creates or OVERWRITES)</td></tr>
+                        <tr class="border-b"><td class="py-2"><code>"a"</code></td><td class="py-2">Append (adds to end)</td></tr>
+                        <tr><td class="py-2"><code>"x"</code></td><td class="py-2">Create (fails if exists)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-green-50 border-l-4 border-green-400 p-6 mb-8">
+                <h3 class="text-xl font-bold text-green-800 mb-2">🎉 Congratulations!</h3>
+                <p class="text-green-700">You've completed all 10 lessons! You now know:</p>
+                <ul class="mt-4 space-y-2 text-green-700">
+                    <li>✅ Variables, Strings, Numbers</li>
+                    <li>✅ Lists, Dictionaries</li>
+                    <li>✅ If/Else, Loops</li>
+                    <li>✅ Functions</li>
+                    <li>✅ File Handling</li>
+                </ul>
+                <p class="mt-4 text-green-700"><strong>What's next?</strong> Build projects! Try a to-do app, a calculator, or a simple game. Practice is the only way to get better.</p>
+            </div>
+
+            <div class="flex justify-between mt-8">
+                <button onclick="showLesson(9)" class="px-4 py-2 bg-slate-200 rounded-lg hover:bg-slate-300 transition">← Lesson 9</button>
+                <button onclick="showLesson(0)" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition">Back to All Lessons</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 mt-12">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p>&copy; 2024 PythonFromZero. All rights reserved.</p>
+            <p class="mt-2 text-sm">Learn Python the simple way. No fluff, just code.</p>
+            <p class="mt-2 text-sm"><button onclick="showLesson(0)" class="text-primary hover:underline">Home</button></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Navigation -->
+    <script>
+        function showLesson(lessonNum) {
+            // Hide all lessons
+            document.querySelectorAll('.lesson').forEach(lesson => {
+                lesson.classList.remove('active');
+            });
+            
+            // Show selected lesson
+            document.getElementById('lesson' + lessonNum).classList.add('active');
+            
+            // Update nav buttons
+            document.querySelectorAll('.nav-btn').forEach((btn, index) => {
+                btn.classList.remove('active', 'bg-primary', 'text-white');
+                if (index === 0 && lessonNum === 0) {
+                    btn.classList.add('active', 'bg-primary', 'text-white');
+                } else if (index === lessonNum && lessonNum > 0) {
+                    btn.classList.add('active', 'bg-primary', 'text-white');
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            showLesson(0);
+        });
+    </script>
+
+</body>
+</html>
