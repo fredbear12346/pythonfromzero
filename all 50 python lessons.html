@@ -1,0 +1,2661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PythonFromZero - Master Python in 50 Lessons</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        code, pre { font-family: 'JetBrains Mono', monospace; }
+        pre { 
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); 
+            color: #10b981; 
+            padding: 1.5rem; 
+            border-radius: 1rem; 
+            overflow-x: auto;
+            border: 1px solid #334155;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin: 1rem 0;
+        }
+        .lesson-card { scroll-margin-top: 100px; }
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .lesson-complete { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .nav-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            margin: 0.25rem;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .tip-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+        .success-box {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border-left: 4px solid #ef4444;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 min-h-screen">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 bg-white/95 backdrop-blur-xl border-b border-slate-200 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-8">
+                    <a href="#top" class="text-3xl font-black gradient-text">PythonFromZero</a>
+                    <nav class="hidden md:flex space-x-6">
+                        <a href="#lessons-grid" class="text-slate-600 hover:text-blue-600 font-medium">All Lessons</a>
+                        <a href="#lesson-1" class="text-slate-600 hover:text-blue-600 font-medium">Start Learning</a>
+                        <a href="#lesson-25" class="text-slate-600 hover:text-blue-600 font-medium">⚡ Speed Coding</a>
+                    </nav>
+                </div>
+                <div class="text-right">
+                    <span class="text-2xl font-bold text-green-600">50 Lessons</span>
+                    <span class="text-slate-500 ml-2">100% Free</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="top" class="hero-gradient text-white py-24">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-block bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm font-bold mb-6">
+                🔥 COMPLETE COURSE • 50 LESSONS • FREE FOREVER
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black mb-6">
+                Master Python in<br>50 Lessons
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 opacity-95">
+                From absolute beginner to confident programmer
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#lesson-1" class="bg-white text-purple-700 px-8 py-4 rounded-full text-xl font-bold hover:shadow-2xl transition">
+                    🚀 Start Lesson 1
+                </a>
+                <a href="#lesson-25" class="bg-yellow-400 text-black px-8 py-4 rounded-full text-xl font-bold hover:shadow-2xl transition">
+                    ⚡ Lesson 25: Code FAST
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lessons Grid -->
+    <section id="lessons-grid" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-black text-center mb-8 gradient-text">All 50 Lessons</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-10 gap-2">
+                <a href="#lesson-1" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">1</a>
+                <a href="#lesson-2" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">2</a>
+                <a href="#lesson-3" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">3</a>
+                <a href="#lesson-4" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">4</a>
+                <a href="#lesson-5" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">5</a>
+                <a href="#lesson-6" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">6</a>
+                <a href="#lesson-7" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">7</a>
+                <a href="#lesson-8" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">8</a>
+                <a href="#lesson-9" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">9</a>
+                <a href="#lesson-10" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">10</a>
+                <a href="#lesson-11" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">11</a>
+                <a href="#lesson-12" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">12</a>
+                <a href="#lesson-13" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">13</a>
+                <a href="#lesson-14" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">14</a>
+                <a href="#lesson-15" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">15</a>
+                <a href="#lesson-16" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">16</a>
+                <a href="#lesson-17" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">17</a>
+                <a href="#lesson-18" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">18</a>
+                <a href="#lesson-19" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">19</a>
+                <a href="#lesson-20" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">20</a>
+                <a href="#lesson-21" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">21</a>
+                <a href="#lesson-22" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">22</a>
+                <a href="#lesson-23" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">23</a>
+                <a href="#lesson-24" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">24</a>
+                <a href="#lesson-25" class="bg-gradient-to-r from-yellow-400 to-orange-500 text-black p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">⚡25</a>
+                <a href="#lesson-26" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">26</a>
+                <a href="#lesson-27" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">27</a>
+                <a href="#lesson-28" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">28</a>
+                <a href="#lesson-29" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">29</a>
+                <a href="#lesson-30" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">30</a>
+                <a href="#lesson-31" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">31</a>
+                <a href="#lesson-32" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">32</a>
+                <a href="#lesson-33" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">33</a>
+                <a href="#lesson-34" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">34</a>
+                <a href="#lesson-35" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">35</a>
+                <a href="#lesson-36" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">36</a>
+                <a href="#lesson-37" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">37</a>
+                <a href="#lesson-38" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">38</a>
+                <a href="#lesson-39" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">39</a>
+                <a href="#lesson-40" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">40</a>
+                <a href="#lesson-41" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">41</a>
+                <a href="#lesson-42" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">42</a>
+                <a href="#lesson-43" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">43</a>
+                <a href="#lesson-44" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">44</a>
+                <a href="#lesson-45" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">45</a>
+                <a href="#lesson-46" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">46</a>
+                <a href="#lesson-47" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">47</a>
+                <a href="#lesson-48" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">48</a>
+                <a href="#lesson-49" class="lesson-complete text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">49</a>
+                <a href="#lesson-50" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-3 rounded-lg text-center text-sm font-bold hover:scale-105 transition">🎓50</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALL 50 LESSONS -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-6">
+
+            <!-- ==================== LESSON 1 ==================== -->
+            <div id="lesson-1" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-blue-600 uppercase">Lesson 1</span>
+                        <h3 class="text-3xl font-black mt-2">Hello, World! 👋</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">5 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Welcome to Python! Let's write your very first program.</p>
+                
+                <h4 class="text-xl font-bold mb-3">Your First Python Code</h4>
+                <pre><code>print("Hello, World!")</code></pre>
+                
+                <p class="my-4">The <code>print()</code> function displays text on your screen. Whatever you put inside the quotes will appear!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Try More Examples</h4>
+                <pre><code>print("Hello, World!")
+print("My name is Python!")
+print("I am learning to code!")
+print("This is amazing! 🚀")</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: The print() function displays text on the screen</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-2" class="nav-btn">Continue to Lesson 2 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 2 ==================== -->
+            <div id="lesson-2" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-green-600 uppercase">Lesson 2</span>
+                        <h3 class="text-3xl font-black mt-2">Variables - Store Your Data 📦</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">7 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Variables are containers that store data. Think of them as labeled boxes!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Creating Variables</h4>
+                <pre><code># Store text (strings)
+name = "Alice"
+city = "New York"
+
+# Store numbers
+age = 25
+price = 19.99
+
+# Use them with print
+print(name)
+print(age)</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Combining Variables with Text</h4>
+                <pre><code>name = "Bob"
+age = 30
+
+print("My name is", name)
+print("I am", age, "years old")</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Changing Variables</h4>
+                <pre><code>score = 0
+print(score)  # 0
+
+score = 10
+print(score)  # 10
+
+score = score + 5
+print(score)  # 15</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Variables store data that you can use and change</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-1" class="nav-btn">← Previous</a>
+                    <a href="#lesson-3" class="nav-btn">Continue to Lesson 3 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 3 ==================== -->
+            <div id="lesson-3" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-purple-600 uppercase">Lesson 3</span>
+                        <h3 class="text-3xl font-black mt-2">Data Types 🔤🔢</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">8 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Python has different types of data. Let's learn the 4 main ones!</p>
+                
+                <h4 class="text-xl font-bold mb-3">The 4 Essential Data Types</h4>
+                <pre><code># 1. Strings (text) - use quotes
+name = "Python"
+message = 'Hello there!'
+
+# 2. Integers (whole numbers)
+age = 25
+count = 100
+
+# 3. Floats (decimal numbers)
+price = 19.99
+temperature = 98.6
+
+# 4. Booleans (True or False)
+is_student = True
+is_raining = False</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Check the Type</h4>
+                <pre><code>x = 42
+print(type(x))  # &lt;class 'int'&gt;
+
+y = "Hello"
+print(type(y))  # &lt;class 'str'&gt;
+
+z = 3.14
+print(type(z))  # &lt;class 'float'&gt;
+
+w = True
+print(type(w))  # &lt;class 'bool'&gt;</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Python has strings, integers, floats, and booleans</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-2" class="nav-btn">← Previous</a>
+                    <a href="#lesson-4" class="nav-btn">Continue to Lesson 4 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 4 ==================== -->
+            <div id="lesson-4" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-orange-600 uppercase">Lesson 4</span>
+                        <h3 class="text-3xl font-black mt-2">User Input ⌨️</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">10 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Make your programs interactive by asking users for input!</p>
+                
+                <h4 class="text-xl font-bold mb-3">The input() Function</h4>
+                <pre><code>name = input("What is your name? ")
+print("Hello,", name + "!")</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Getting Numbers from Users</h4>
+                <pre><code># input() always returns a string
+# Use int() or float() to convert to numbers
+
+age = input("How old are you? ")
+age = int(age)  # Convert string to integer
+
+print("Next year you will be", age + 1)</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Mini Project: Profile Creator</h4>
+                <pre><code>print("=== PROFILE CREATOR ===")
+
+name = input("Enter your name: ")
+age = input("Enter your age: ")
+city = input("Enter your city: ")
+hobby = input("Enter your hobby: ")
+
+print("\n--- YOUR PROFILE ---")
+print("Name:", name)
+print("Age:", age)
+print("City:", city)
+print("Hobby:", hobby)
+print("Welcome to Python!")</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: input() gets data from users</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-3" class="nav-btn">← Previous</a>
+                    <a href="#lesson-5" class="nav-btn">Continue to Lesson 5 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 5 ==================== -->
+            <div id="lesson-5" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-cyan-600 uppercase">Lesson 5</span>
+                        <h3 class="text-3xl font-black mt-2">If Statements - Make Decisions 🤔</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">12 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">If statements let your program make decisions based on conditions!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Basic If Statement</h4>
+                <pre><code>age = 18
+
+if age >= 18:
+    print("You can vote!")
+    print("You are an adult")</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">If-Else</h4>
+                <pre><code>password = input("Enter password: ")
+
+if password == "secret123":
+    print("Access granted! ✅")
+else:
+    print("Wrong password! ❌")</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Multiple Conditions with Elif</h4>
+                <pre><code>score = int(input("Enter your score: "))
+
+if score >= 90:
+    print("Grade: A 🌟")
+elif score >= 80:
+    print("Grade: B 😊")
+elif score >= 70:
+    print("Grade: C 👍")
+elif score >= 60:
+    print("Grade: D 📚")
+else:
+    print("Grade: F - Try harder! 💪")</code></pre>
+                
+                <div class="tip-box">
+                    <p class="font-bold">💡 Tip: Remember the colon : after if, elif, and else!</p>
+                </div>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: If statements control program flow based on conditions</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-4" class="nav-btn">← Previous</a>
+                    <a href="#lesson-6" class="nav-btn">Continue to Lesson 6 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 6 ==================== -->
+            <div id="lesson-6" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-indigo-600 uppercase">Lesson 6</span>
+                        <h3 class="text-3xl font-black mt-2">For Loops 🔄</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">15 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Loops repeat code automatically. No more copying and pasting!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Count with range()</h4>
+                <pre><code># Count from 0 to 4
+for i in range(5):
+    print(i)
+
+# Output: 0, 1, 2, 3, 4</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Loop Through a List</h4>
+                <pre><code>fruits = ["apple", "banana", "orange"]
+
+for fruit in fruits:
+    print("I love", fruit)</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Practical Example: Multiplication Table</h4>
+                <pre><code>number = int(input("Enter a number: "))
+
+print(f"\nMultiplication table for {number}:")
+for i in range(1, 11):
+    result = number * i
+    print(f"{number} x {i} = {result}")</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: For loops repeat code a specific number of times</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-5" class="nav-btn">← Previous</a>
+                    <a href="#lesson-7" class="nav-btn">Continue to Lesson 7 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 7 ==================== -->
+            <div id="lesson-7" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-pink-600 uppercase">Lesson 7</span>
+                        <h3 class="text-3xl font-black mt-2">While Loops 🔁</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">12 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">While loops keep running as long as a condition is true!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Basic While Loop</h4>
+                <pre><code>count = 0
+
+while count < 5:
+    print("Count is:", count)
+    count = count + 1
+
+print("Done!")</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Countdown Timer</h4>
+                <pre><code>countdown = 10
+
+while countdown > 0:
+    print(countdown)
+    countdown = countdown - 1
+
+print("🚀 Blast off!")</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Password Checker</h4>
+                <pre><code>password = ""
+
+while password != "python123":
+    password = input("Enter password: ")
+    
+    if password != "python123":
+        print("Wrong! Try again.")
+
+print("✅ Access granted!")</code></pre>
+                
+                <div class="warning-box">
+                    <p class="font-bold">⚠️ Warning: Make sure your while loop can end, or it will run forever!</p>
+                </div>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: While loops repeat until a condition becomes false</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-6" class="nav-btn">← Previous</a>
+                    <a href="#lesson-8" class="nav-btn">Continue to Lesson 8 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 8 ==================== -->
+            <div id="lesson-8" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-teal-600 uppercase">Lesson 8</span>
+                        <h3 class="text-3xl font-black mt-2">Functions 🔧</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">15 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Functions are reusable blocks of code. Write once, use many times!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Creating a Function</h4>
+                <pre><code>def greet():
+    print("Hello!")
+    print("Welcome to Python!")
+
+# Call the function
+greet()
+greet()  # Call it again!</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Functions with Parameters</h4>
+                <pre><code>def greet_person(name):
+    print(f"Hello, {name}!")
+
+greet_person("Alice")
+greet_person("Bob")</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Functions that Return Values</h4>
+                <pre><code>def add(a, b):
+    return a + b
+
+def multiply(a, b):
+    return a * b
+
+result1 = add(5, 3)
+result2 = multiply(4, 7)
+
+print("5 + 3 =", result1)
+print("4 x 7 =", result2)</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Functions make code reusable and organized</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-7" class="nav-btn">← Previous</a>
+                    <a href="#lesson-9" class="nav-btn">Continue to Lesson 9 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 9 ==================== -->
+            <div id="lesson-9" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-amber-600 uppercase">Lesson 9</span>
+                        <h3 class="text-3xl font-black mt-2">Lists 📝</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">18 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Lists store multiple items in a single variable!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Creating Lists</h4>
+                <pre><code>fruits = ["apple", "banana", "orange"]
+numbers = [1, 2, 3, 4, 5]
+mixed = ["hello", 42, 3.14, True]
+empty = []</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Accessing Items</h4>
+                <pre><code>colors = ["red", "green", "blue", "yellow"]
+
+print(colors[0])   # red (first item)
+print(colors[2])   # blue
+print(colors[-1])  # yellow (last item)</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Modifying Lists</h4>
+                <pre><code>fruits = ["apple", "banana"]
+
+# Add items
+fruits.append("orange")      # Add to end
+fruits.insert(0, "grape")    # Add at position 0
+
+# Remove items
+fruits.remove("banana")      # Remove by value
+last = fruits.pop()          # Remove and return last item
+
+print(fruits)</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Loop Through a List</h4>
+                <pre><code>shopping = ["milk", "bread", "eggs", "cheese"]
+
+print("Shopping List:")
+for item in shopping:
+    print(f"• {item}")</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Lists store collections of items</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-8" class="nav-btn">← Previous</a>
+                    <a href="#lesson-10" class="nav-btn">Continue to Lesson 10 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 10 ==================== -->
+            <div id="lesson-10" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-red-600 uppercase">Lesson 10</span>
+                        <h3 class="text-3xl font-black mt-2">Dictionaries 📖</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">20 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Dictionaries store data as key-value pairs!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Creating Dictionaries</h4>
+                <pre><code>person = {
+    "name": "Alice",
+    "age": 25,
+    "city": "New York"
+}
+
+print(person["name"])  # Alice
+print(person["age"])   # 25</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Modifying Dictionaries</h4>
+                <pre><code>student = {"name": "Bob", "grade": 85}
+
+# Change value
+student["grade"] = 90
+
+# Add new key
+student["email"] = "bob@email.com"
+
+# Remove key
+del student["grade"]
+
+print(student)</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Loop Through Dictionary</h4>
+                <pre><code>scores = {"Alice": 95, "Bob": 87, "Charlie": 92}
+
+for name, score in scores.items():
+    print(f"{name}: {score} points")</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Dictionaries store key-value pairs</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-9" class="nav-btn">← Previous</a>
+                    <a href="#lesson-11" class="nav-btn">Continue to Lesson 11 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 11 ==================== -->
+            <div id="lesson-11" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-blue-600 uppercase">Lesson 11</span>
+                        <h3 class="text-3xl font-black mt-2">String Methods 🔤</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">15 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Strings have built-in methods to manipulate text!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Case Methods</h4>
+                <pre><code>text = "Hello World"
+
+print(text.upper())      # HELLO WORLD
+print(text.lower())      # hello world
+print(text.title())      # Hello World
+print(text.swapcase())   # hELLO wORLD</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Search Methods</h4>
+                <pre><code>sentence = "Python is awesome"
+
+print(sentence.find("is"))       # 7 (position)
+print(sentence.count("o"))       # 2
+print(sentence.startswith("Py")) # True
+print(sentence.endswith("me"))   # True
+print("awesome" in sentence)     # True</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Modify Methods</h4>
+                <pre><code>text = "   hello world   "
+
+print(text.strip())              # Remove whitespace
+print(text.replace("world", "Python"))
+print("a,b,c".split(","))        # ['a', 'b', 'c']
+print("-".join(["a", "b", "c"])) # a-b-c</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Strings have powerful built-in methods</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-10" class="nav-btn">← Previous</a>
+                    <a href="#lesson-12" class="nav-btn">Continue to Lesson 12 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 12 ==================== -->
+            <div id="lesson-12" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-green-600 uppercase">Lesson 12</span>
+                        <h3 class="text-3xl font-black mt-2">F-Strings (String Formatting) ✨</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">10 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">F-strings make it easy to put variables inside strings!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Basic F-Strings</h4>
+                <pre><code>name = "Alice"
+age = 25
+
+# Old way
+print("My name is " + name + " and I am " + str(age))
+
+# F-string way (much better!)
+print(f"My name is {name} and I am {age}")</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Math in F-Strings</h4>
+                <pre><code>price = 19.99
+quantity = 3
+
+print(f"Total: ${price * quantity}")
+print(f"Each item: ${price:.2f}")</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Formatting Numbers</h4>
+                <pre><code>pi = 3.14159265359
+big_number = 1000000
+
+print(f"Pi: {pi:.2f}")           # 3.14
+print(f"Pi: {pi:.4f}")           # 3.1416
+print(f"Number: {big_number:,}") # 1,000,000</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: F-strings make string formatting easy and readable</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-11" class="nav-btn">← Previous</a>
+                    <a href="#lesson-13" class="nav-btn">Continue to Lesson 13 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 13 ==================== -->
+            <div id="lesson-13" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-purple-600 uppercase">Lesson 13</span>
+                        <h3 class="text-3xl font-black mt-2">List Comprehensions 🚀</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">12 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Create lists in one line! It's Python magic!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Traditional Way vs Comprehension</h4>
+                <pre><code># Traditional way
+squares = []
+for x in range(5):
+    squares.append(x ** 2)
+
+# List comprehension (one line!)
+squares = [x ** 2 for x in range(5)]
+print(squares)  # [0, 1, 4, 9, 16]</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">With Conditions</h4>
+                <pre><code># Only even numbers
+evens = [x for x in range(10) if x % 2 == 0]
+print(evens)  # [0, 2, 4, 6, 8]
+
+# Only words longer than 3 letters
+words = ["hi", "hello", "hey", "world"]
+long_words = [w for w in words if len(w) > 3]
+print(long_words)  # ['hello', 'world']</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Transform Items</h4>
+                <pre><code>names = ["alice", "bob", "charlie"]
+upper_names = [name.upper() for name in names]
+print(upper_names)  # ['ALICE', 'BOB', 'CHARLIE']</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: List comprehensions create lists in one powerful line</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-12" class="nav-btn">← Previous</a>
+                    <a href="#lesson-14" class="nav-btn">Continue to Lesson 14 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 14 ==================== -->
+            <div id="lesson-14" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-orange-600 uppercase">Lesson 14</span>
+                        <h3 class="text-3xl font-black mt-2">Tuples & Sets 📦</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">12 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Two more collection types: tuples (unchangeable) and sets (unique items)!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Tuples - Immutable Lists</h4>
+                <pre><code># Tuples use parentheses
+coordinates = (10, 20)
+rgb = (255, 128, 0)
+
+print(coordinates[0])  # 10
+print(rgb[1])          # 128
+
+# Tuples can't be changed!
+# coordinates[0] = 5  # This would cause an error!</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Sets - Unique Items Only</h4>
+                <pre><code># Sets use curly braces
+numbers = {1, 2, 3, 3, 3, 4}
+print(numbers)  # {1, 2, 3, 4} - duplicates removed!
+
+# Add and remove
+numbers.add(5)
+numbers.remove(1)
+print(numbers)</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Set Operations</h4>
+                <pre><code>a = {1, 2, 3, 4}
+b = {3, 4, 5, 6}
+
+print(a | b)  # Union: {1, 2, 3, 4, 5, 6}
+print(a & b)  # Intersection: {3, 4}
+print(a - b)  # Difference: {1, 2}</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Tuples are immutable, sets contain unique items</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-13" class="nav-btn">← Previous</a>
+                    <a href="#lesson-15" class="nav-btn">Continue to Lesson 15 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 15 ==================== -->
+            <div id="lesson-15" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-cyan-600 uppercase">Lesson 15</span>
+                        <h3 class="text-3xl font-black mt-2">Error Handling (Try/Except) 🛡️</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">15 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Handle errors gracefully so your program doesn't crash!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Basic Try/Except</h4>
+                <pre><code>try:
+    number = int(input("Enter a number: "))
+    print(f"You entered: {number}")
+except:
+    print("That's not a valid number!")</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Catching Specific Errors</h4>
+                <pre><code>try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+except ValueError:
+    print("Invalid value!")
+except Exception as e:
+    print(f"An error occurred: {e}")</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Try/Except/Finally</h4>
+                <pre><code>try:
+    file = open("data.txt", "r")
+    content = file.read()
+except FileNotFoundError:
+    print("File not found!")
+finally:
+    print("This always runs!")</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Safe Calculator</h4>
+                <pre><code>def safe_divide(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return "Cannot divide by zero!"
+
+print(safe_divide(10, 2))   # 5.0
+print(safe_divide(10, 0))   # Cannot divide by zero!</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Try/except prevents crashes from errors</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-14" class="nav-btn">← Previous</a>
+                    <a href="#lesson-16" class="nav-btn">Continue to Lesson 16 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 16 ==================== -->
+            <div id="lesson-16" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-indigo-600 uppercase">Lesson 16</span>
+                        <h3 class="text-3xl font-black mt-2">Reading Files 📄</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">15 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Read data from files on your computer!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Read Entire File</h4>
+                <pre><code># Read all content at once
+with open("example.txt", "r") as file:
+    content = file.read()
+    print(content)</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Read Line by Line</h4>
+                <pre><code>with open("example.txt", "r") as file:
+    for line in file:
+        print(line.strip())  # strip() removes newlines</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Read into List</h4>
+                <pre><code>with open("names.txt", "r") as file:
+    names = file.readlines()
+    
+for name in names:
+    print(f"Hello, {name.strip()}!")</code></pre>
+                
+                <div class="tip-box">
+                    <p class="font-bold">💡 Tip: The 'with' statement automatically closes the file when done!</p>
+                </div>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: How to read data from files</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-15" class="nav-btn">← Previous</a>
+                    <a href="#lesson-17" class="nav-btn">Continue to Lesson 17 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 17 ==================== -->
+            <div id="lesson-17" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-pink-600 uppercase">Lesson 17</span>
+                        <h3 class="text-3xl font-black mt-2">Writing Files ✍️</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">12 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Save data to files that persist after your program ends!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Write to File (Overwrite)</h4>
+                <pre><code># 'w' mode creates new file or overwrites existing
+with open("output.txt", "w") as file:
+    file.write("Hello, World!\n")
+    file.write("This is line 2\n")</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Append to File</h4>
+                <pre><code># 'a' mode adds to existing file
+with open("log.txt", "a") as file:
+    file.write("New log entry\n")</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Write List to File</h4>
+                <pre><code>names = ["Alice", "Bob", "Charlie"]
+
+with open("names.txt", "w") as file:
+    for name in names:
+        file.write(f"{name}\n")</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Project: Simple Note App</h4>
+                <pre><code>def save_note():
+    note = input("Enter your note: ")
+    with open("notes.txt", "a") as file:
+        file.write(note + "\n")
+    print("Note saved!")
+
+def read_notes():
+    try:
+        with open("notes.txt", "r") as file:
+            print("Your notes:")
+            print(file.read())
+    except FileNotFoundError:
+        print("No notes yet!")
+
+# Try it!
+save_note()
+read_notes()</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: How to save data to files</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-16" class="nav-btn">← Previous</a>
+                    <a href="#lesson-18" class="nav-btn">Continue to Lesson 18 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 18 ==================== -->
+            <div id="lesson-18" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-teal-600 uppercase">Lesson 18</span>
+                        <h3 class="text-3xl font-black mt-2">Modules & Imports 📦</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">15 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Use pre-built code libraries to supercharge your programs!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Import Entire Module</h4>
+                <pre><code>import math
+
+print(math.pi)        # 3.14159...
+print(math.sqrt(16))  # 4.0
+print(math.floor(3.7)) # 3</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Import Specific Functions</h4>
+                <pre><code>from math import sqrt, pi
+
+print(sqrt(25))  # 5.0
+print(pi)        # 3.14159...</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Import with Alias</h4>
+                <pre><code>import random as r
+
+print(r.randint(1, 10))
+print(r.choice(["a", "b", "c"]))</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Common Modules</h4>
+                <pre><code>import random    # Random numbers
+import datetime  # Dates and times
+import os        # Operating system
+import json      # JSON data
+import math      # Math functions</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Import modules to use pre-built functionality</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-17" class="nav-btn">← Previous</a>
+                    <a href="#lesson-19" class="nav-btn">Continue to Lesson 19 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 19 ==================== -->
+            <div id="lesson-19" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-amber-600 uppercase">Lesson 19</span>
+                        <h3 class="text-3xl font-black mt-2">Random Module 🎲</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">12 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Generate random numbers and make random choices!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Random Numbers</h4>
+                <pre><code>import random
+
+# Random integer between 1 and 10
+print(random.randint(1, 10))
+
+# Random float between 0 and 1
+print(random.random())
+
+# Random float in range
+print(random.uniform(1.5, 6.5))</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Random Choices</h4>
+                <pre><code>import random
+
+colors = ["red", "blue", "green", "yellow"]
+
+print(random.choice(colors))        # Pick one
+print(random.choices(colors, k=2))  # Pick multiple (can repeat)
+print(random.sample(colors, k=2))   # Pick multiple (no repeat)</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Shuffle a List</h4>
+                <pre><code>import random
+
+cards = ["A", "2", "3", "4", "5"]
+random.shuffle(cards)
+print(cards)</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Dice Roller</h4>
+                <pre><code>import random
+
+def roll_dice(sides=6):
+    return random.randint(1, sides)
+
+print(f"D6: {roll_dice()}")
+print(f"D20: {roll_dice(20)}")</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Generate randomness in your programs</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-18" class="nav-btn">← Previous</a>
+                    <a href="#lesson-20" class="nav-btn">Continue to Lesson 20 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 20 ==================== -->
+            <div id="lesson-20" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-red-600 uppercase">Lesson 20</span>
+                        <h3 class="text-3xl font-black mt-2">🎮 Project: Number Guessing Game</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">25 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Let's build a complete game using everything you've learned!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Complete Game Code</h4>
+                <pre><code>import random
+
+def play_game():
+    print("=" * 40)
+    print("🎯 NUMBER GUESSING GAME")
+    print("=" * 40)
+    
+    # Generate secret number
+    secret = random.randint(1, 100)
+    attempts = 0
+    max_attempts = 7
+    
+    print(f"\nI'm thinking of a number between 1 and 100")
+    print(f"You have {max_attempts} attempts. Good luck!\n")
+    
+    while attempts < max_attempts:
+        try:
+            guess = int(input("Your guess: "))
+            attempts += 1
+            
+            if guess == secret:
+                print(f"\n🎉 CORRECT! You got it in {attempts} attempts!")
+                return True
+            elif guess < secret:
+                print("📈 Too LOW! Guess higher.")
+            else:
+                print("📉 Too HIGH! Guess lower.")
+            
+            remaining = max_attempts - attempts
+            if remaining > 0:
+                print(f"   ({remaining} attempts left)\n")
+                
+        except ValueError:
+            print("Please enter a valid number!")
+    
+    print(f"\n😢 Game Over! The number was {secret}")
+    return False
+
+# Play the game
+while True:
+    play_game()
+    again = input("\nPlay again? (yes/no): ")
+    if again.lower() != "yes":
+        print("Thanks for playing! 👋")
+        break</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">🎉 Milestone! You've completed 20 lessons and built a real game!</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-19" class="nav-btn">← Previous</a>
+                    <a href="#lesson-21" class="nav-btn">Continue to Lesson 21 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 21 ==================== -->
+            <div id="lesson-21" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-blue-600 uppercase">Lesson 21</span>
+                        <h3 class="text-3xl font-black mt-2">Classes & Objects (OOP Basics) 🏗️</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">20 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Object-Oriented Programming lets you create your own custom types!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Your First Class</h4>
+                <pre><code>class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def bark(self):
+        print(f"{self.name} says: Woof!")
+    
+    def info(self):
+        print(f"{self.name} is {self.age} years old")
+
+# Create objects
+my_dog = Dog("Buddy", 3)
+your_dog = Dog("Max", 5)
+
+my_dog.bark()    # Buddy says: Woof!
+your_dog.info()  # Max is 5 years old</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Class with More Methods</h4>
+                <pre><code>class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.owner = owner
+        self.balance = balance
+    
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"Deposited ${amount}. Balance: ${self.balance}")
+    
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+            print(f"Withdrew ${amount}. Balance: ${self.balance}")
+        else:
+            print("Insufficient funds!")
+
+# Use it
+account = BankAccount("Alice", 100)
+account.deposit(50)    # Balance: $150
+account.withdraw(30)   # Balance: $120</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Classes are blueprints for creating objects</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-20" class="nav-btn">← Previous</a>
+                    <a href="#lesson-22" class="nav-btn">Continue to Lesson 22 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 22 ==================== -->
+            <div id="lesson-22" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-green-600 uppercase">Lesson 22</span>
+                        <h3 class="text-3xl font-black mt-2">Inheritance 👨‍👦</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">15 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Create new classes based on existing ones!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Basic Inheritance</h4>
+                <pre><code># Parent class
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    
+    def speak(self):
+        print("Some sound")
+
+# Child classes
+class Dog(Animal):
+    def speak(self):
+        print(f"{self.name} says: Woof!")
+
+class Cat(Animal):
+    def speak(self):
+        print(f"{self.name} says: Meow!")
+
+# Create objects
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+
+dog.speak()  # Buddy says: Woof!
+cat.speak()  # Whiskers says: Meow!</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Using super()</h4>
+                <pre><code>class Vehicle:
+    def __init__(self, brand, year):
+        self.brand = brand
+        self.year = year
+
+class Car(Vehicle):
+    def __init__(self, brand, year, model):
+        super().__init__(brand, year)  # Call parent's __init__
+        self.model = model
+    
+    def info(self):
+        print(f"{self.year} {self.brand} {self.model}")
+
+my_car = Car("Toyota", 2022, "Camry")
+my_car.info()  # 2022 Toyota Camry</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Inheritance lets classes share code</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-21" class="nav-btn">← Previous</a>
+                    <a href="#lesson-23" class="nav-btn">Continue to Lesson 23 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 23 ==================== -->
+            <div id="lesson-23" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-purple-600 uppercase">Lesson 23</span>
+                        <h3 class="text-3xl font-black mt-2">Lambda Functions ⚡</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">10 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Lambda functions are small, anonymous functions in one line!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Basic Lambda</h4>
+                <pre><code># Regular function
+def add(a, b):
+    return a + b
+
+# Same thing as lambda
+add = lambda a, b: a + b
+
+print(add(3, 5))  # 8</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Lambda with Built-in Functions</h4>
+                <pre><code>numbers = [1, 2, 3, 4, 5]
+
+# Double each number
+doubled = list(map(lambda x: x * 2, numbers))
+print(doubled)  # [2, 4, 6, 8, 10]
+
+# Filter even numbers
+evens = list(filter(lambda x: x % 2 == 0, numbers))
+print(evens)  # [2, 4]</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Sorting with Lambda</h4>
+                <pre><code>students = [
+    {"name": "Alice", "grade": 85},
+    {"name": "Bob", "grade": 92},
+    {"name": "Charlie", "grade": 78}
+]
+
+# Sort by grade
+students.sort(key=lambda s: s["grade"])
+print([s["name"] for s in students])  # ['Charlie', 'Alice', 'Bob']</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Lambda creates quick, one-line functions</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-22" class="nav-btn">← Previous</a>
+                    <a href="#lesson-24" class="nav-btn">Continue to Lesson 24 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 24 ==================== -->
+            <div id="lesson-24" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-orange-600 uppercase">Lesson 24</span>
+                        <h3 class="text-3xl font-black mt-2">Datetime Module 📅</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">15 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Work with dates and times in your programs!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Current Date & Time</h4>
+                <pre><code>from datetime import datetime, date, time
+
+# Current date and time
+now = datetime.now()
+print(now)  # 2024-01-15 14:30:45.123456
+
+# Just the date
+today = date.today()
+print(today)  # 2024-01-15
+
+# Access parts
+print(now.year)    # 2024
+print(now.month)   # 1
+print(now.day)     # 15
+print(now.hour)    # 14
+print(now.minute)  # 30</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Formatting Dates</h4>
+                <pre><code>from datetime import datetime
+
+now = datetime.now()
+
+# Format as string
+print(now.strftime("%Y-%m-%d"))      # 2024-01-15
+print(now.strftime("%B %d, %Y"))     # January 15, 2024
+print(now.strftime("%I:%M %p"))      # 02:30 PM
+print(now.strftime("%A"))            # Monday</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Date Math</h4>
+                <pre><code>from datetime import datetime, timedelta
+
+now = datetime.now()
+
+# Add days
+future = now + timedelta(days=7)
+print(f"One week from now: {future}")
+
+# Subtract days
+past = now - timedelta(days=30)
+print(f"30 days ago: {past}")
+
+# Difference between dates
+birthday = datetime(2024, 12, 25)
+days_until = (birthday - now).days
+print(f"Days until birthday: {days_until}")</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Work with dates and times using datetime</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-23" class="nav-btn">← Previous</a>
+                    <a href="#lesson-25" class="nav-btn bg-gradient-to-r from-yellow-400 to-orange-500 text-black">⚡ Continue to Lesson 25: SPEED CODING! →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 25 - SPECIAL: HOW TO CODE FAST ==================== -->
+            <div id="lesson-25" class="lesson-card bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 rounded-2xl p-8 mb-8 shadow-xl border-4 border-yellow-400">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-orange-600 uppercase">⚡ SPECIAL LESSON 25 ⚡</span>
+                        <h3 class="text-4xl font-black mt-2 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">How to Code VERY FAST! 🚀</h3>
+                    </div>
+                    <span class="bg-gradient-to-r from-yellow-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-bold animate-pulse">MASTER CLASS</span>
+                </div>
+                
+                <p class="text-xl mb-6 font-bold">This lesson will transform you from a slow typer to a coding speed demon! 💨</p>
+                
+                <div class="bg-white rounded-xl p-6 mb-6 shadow-lg">
+                    <h4 class="text-2xl font-black mb-4 text-orange-600">🎯 Part 1: Essential Keyboard Shortcuts</h4>
+                    <p class="mb-4">These shortcuts work in VS Code, PyCharm, and most editors:</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <h5 class="font-bold mb-2">📝 Editing Shortcuts</h5>
+                            <pre class="text-sm"><code># WINDOWS / LINUX
+Ctrl + C         → Copy
+Ctrl + X         → Cut
+Ctrl + V         → Paste
+Ctrl + Z         → Undo
+Ctrl + Y         → Redo
+Ctrl + D         → Duplicate line
+Ctrl + /         → Comment/Uncomment
+Ctrl + Shift + K → Delete line
+Alt + ↑/↓        → Move line up/down
+
+# MAC
+Cmd instead of Ctrl
+Option instead of Alt</code></pre>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <h5 class="font-bold mb-2">🔍 Navigation Shortcuts</h5>
+                            <pre class="text-sm"><code># NAVIGATION
+Ctrl + G         → Go to line
+Ctrl + P         → Quick open file
+Ctrl + Shift + P → Command palette
+Ctrl + F         → Find
+Ctrl + H         → Find and replace
+Ctrl + Home      → Go to start
+Ctrl + End       → Go to end
+
+# MULTI-CURSOR (GAME CHANGER!)
+Ctrl + D         → Select next match
+Alt + Click      → Add cursor
+Ctrl + Alt + ↑/↓ → Add cursor above/below</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 mb-6 shadow-lg">
+                    <h4 class="text-2xl font-black mb-4 text-blue-600">⚡ Part 2: Speed Coding Techniques</h4>
+                    
+                    <h5 class="text-xl font-bold mb-3">1. Use Code Snippets</h5>
+                    <pre><code># In VS Code, just type and press Tab:
+# "for" + Tab  →  for loop template
+# "if" + Tab   →  if statement template
+# "def" + Tab  →  function template
+# "class" + Tab → class template
+
+# Example: Type "for" and hit Tab, you get:
+for i in range(count):
+    pass  # cursor here!</code></pre>
+                    
+                    <h5 class="text-xl font-bold mb-3 mt-6">2. Autocomplete is Your Best Friend</h5>
+                    <pre><code># Start typing and press Tab or Enter to autocomplete
+
+# Type: pri → print
+# Type: len → len()
+# Type: ran → range()
+# Type: imp → import
+
+# Also works for your variables!
+my_very_long_variable_name = 100
+# Type: my_v → autocomplete suggests your variable!</code></pre>
+                    
+                    <h5 class="text-xl font-bold mb-3 mt-6">3. Multi-Cursor Editing (SUPER POWER!)</h5>
+                    <pre><code># Select a word, then Ctrl+D to select next match
+# Edit all at once!
+
+# BEFORE: (select "name", press Ctrl+D three times)
+name = "Alice"
+print(name)
+name = name.upper()
+
+# AFTER: (change all "name" to "user" at once!)
+user = "Alice"
+print(user)
+user = user.upper()
+
+# This saves MASSIVE time when renaming variables!</code></pre>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 mb-6 shadow-lg">
+                    <h4 class="text-2xl font-black mb-4 text-green-600">🚀 Part 3: Python Speed Tricks</h4>
+                    
+                    <h5 class="text-xl font-bold mb-3">1. One-Line Tricks</h5>
+                    <pre><code># SLOW WAY
+if x > 0:
+    result = "positive"
+else:
+    result = "negative"
+
+# FAST WAY (ternary operator)
+result = "positive" if x > 0 else "negative"
+
+# ---
+
+# SLOW WAY
+squared = []
+for i in range(10):
+    squared.append(i ** 2)
+
+# FAST WAY (list comprehension)
+squared = [i ** 2 for i in range(10)]
+
+# ---
+
+# SWAP VARIABLES
+# SLOW WAY
+temp = a
+a = b
+b = temp
+
+# FAST WAY
+a, b = b, a</code></pre>
+                    
+                    <h5 class="text-xl font-bold mb-3 mt-6">2. Quick Input Tricks</h5>
+                    <pre><code># Read multiple numbers at once
+a, b, c = map(int, input("Enter 3 numbers: ").split())
+
+# Read list of numbers
+numbers = list(map(int, input().split()))
+
+# Quick multiple assignment
+x = y = z = 0
+
+# Unpack list
+first, *middle, last = [1, 2, 3, 4, 5]
+# first = 1, middle = [2, 3, 4], last = 5</code></pre>
+                    
+                    <h5 class="text-xl font-bold mb-3 mt-6">3. String Tricks</h5>
+                    <pre><code># Join list into string (way faster than concatenation)
+words = ["Hello", "World", "Python"]
+sentence = " ".join(words)  # "Hello World Python"
+
+# Repeat strings
+line = "-" * 50  # 50 dashes
+
+# Quick reverse
+text = "Hello"
+reversed_text = text[::-1]  # "olleH"
+
+# Check all conditions
+if all([x > 0, y > 0, z > 0]):
+    print("All positive!")
+
+if any([x > 0, y > 0, z > 0]):
+    print("At least one positive!")</code></pre>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 mb-6 shadow-lg">
+                    <h4 class="text-2xl font-black mb-4 text-purple-600">💪 Part 4: Build Muscle Memory</h4>
+                    
+                    <h5 class="text-xl font-bold mb-3">Daily Practice Routine (15 min/day)</h5>
+                    <pre><code># Day 1-7: Practice these patterns until automatic
+
+# Pattern 1: Quick function
+def function_name(param):
+    return param * 2
+
+# Pattern 2: Quick loop
+for i in range(10):
+    print(i)
+
+# Pattern 3: Quick list comprehension
+result = [x for x in items if condition]
+
+# Pattern 4: Quick dictionary
+data = {"key": "value", "name": "test"}
+
+# Pattern 5: Quick class
+class MyClass:
+    def __init__(self, value):
+        self.value = value</code></pre>
+                    
+                    <h5 class="text-xl font-bold mb-3 mt-6">Typing Speed Goals</h5>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-yellow-100 p-4 rounded-lg text-center">
+                            <div class="text-3xl font-black">40 WPM</div>
+                            <div class="text-sm">Beginner</div>
+                        </div>
+                        <div class="bg-orange-100 p-4 rounded-lg text-center">
+                            <div class="text-3xl font-black">60 WPM</div>
+                            <div class="text-sm">Intermediate</div>
+                        </div>
+                        <div class="bg-red-100 p-4 rounded-lg text-center">
+                            <div class="text-3xl font-black">80+ WPM</div>
+                            <div class="text-sm">Speed Demon 🔥</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 mb-6 shadow-lg">
+                    <h4 class="text-2xl font-black mb-4 text-red-600">🔥 Part 5: Pro Setup for Speed</h4>
+                    
+                    <h5 class="text-xl font-bold mb-3">VS Code Extensions for Speed</h5>
+                    <pre><code># MUST-HAVE EXTENSIONS:
+1. Python                    → Python support
+2. Pylance                   → Fast autocomplete
+3. Code Runner              → Run code with one click
+4. Auto Rename Tag          → Rename pairs
+5. Bracket Pair Colorizer   → See matching brackets
+6. Error Lens               → See errors inline
+7. GitLens                  → Git superpowers
+
+# SETTINGS TO ENABLE:
+- "editor.formatOnSave": true
+- "editor.tabCompletion": "on"
+- "editor.quickSuggestions": true
+- "editor.suggestOnTriggerCharacters": true</code></pre>
+                    
+                    <h5 class="text-xl font-bold mb-3 mt-6">Create Your Own Snippets</h5>
+                    <pre><code>// In VS Code: File → Preferences → User Snippets → python.json
+
+{
+    "Main Block": {
+        "prefix": "main",
+        "body": [
+            "def main():",
+            "    $1",
+            "",
+            "if __name__ == '__main__':",
+            "    main()"
+        ]
+    },
+    "Print Debug": {
+        "prefix": "pd",
+        "body": "print(f'DEBUG: $1 = {$1}')"
+    }
+}
+
+// Now type "main" + Tab → full main block!
+// Type "pd" + Tab → print debug statement!</code></pre>
+                </div>
+                
+                <div class="bg-gradient-to-r from-yellow-200 to-orange-200 rounded-xl p-6 mb-6 shadow-lg">
+                    <h4 class="text-2xl font-black mb-4">⏱️ Speed Challenge: Test Yourself!</h4>
+                    <p class="mb-4">Try to write this program in under 2 minutes:</p>
+                    <pre><code># Challenge: FizzBuzz (under 2 minutes!)
+# Print 1-100, but:
+# - Multiples of 3: print "Fizz"
+# - Multiples of 5: print "Buzz"  
+# - Multiples of both: print "FizzBuzz"
+
+# GO!
+for i in range(1, 101):
+    if i % 15 == 0:
+        print("FizzBuzz")
+    elif i % 3 == 0:
+        print("Fizz")
+    elif i % 5 == 0:
+        print("Buzz")
+    else:
+        print(i)
+
+# One-liner version (expert mode):
+print('\n'.join('FizzBuzz'[i%3*4:i%5*8or 8] or str(i) for i in range(1,101)))</code></pre>
+                </div>
+                
+                <div class="bg-gradient-to-r from-green-400 to-emerald-500 text-white rounded-xl p-6 shadow-lg">
+                    <h4 class="text-2xl font-black mb-4">🎯 Speed Coding Summary</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-bold mb-2">✅ DO:</p>
+                            <ul class="list-disc ml-6">
+                                <li>Use keyboard shortcuts daily</li>
+                                <li>Master multi-cursor editing</li>
+                                <li>Learn code snippets</li>
+                                <li>Practice typing speed</li>
+                                <li>Use autocomplete always</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-bold mb-2">❌ DON'T:</p>
+                            <ul class="list-disc ml-6">
+                                <li>Use mouse for everything</li>
+                                <li>Type out full words manually</li>
+                                <li>Ignore IDE features</li>
+                                <li>Skip the basics</li>
+                                <li>Rush without accuracy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="success-box mt-6">
+                    <p class="text-xl font-bold">🏆 LESSON 25 COMPLETE!</p>
+                    <p>You now have the secrets to coding 10x faster! Practice these daily!</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-24" class="nav-btn">← Previous</a>
+                    <a href="#lesson-26" class="nav-btn">Continue to Lesson 26 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 26 ==================== -->
+            <div id="lesson-26" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-cyan-600 uppercase">Lesson 26</span>
+                        <h3 class="text-3xl font-black mt-2">JSON Data 📋</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">15 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">JSON is the standard format for storing and exchanging data!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Working with JSON</h4>
+                <pre><code>import json
+
+# Python dictionary to JSON string
+data = {"name": "Alice", "age": 25, "skills": ["Python", "JavaScript"]}
+json_string = json.dumps(data, indent=2)
+print(json_string)
+
+# JSON string to Python dictionary
+json_text = '{"name": "Bob", "age": 30}'
+parsed = json.loads(json_text)
+print(parsed["name"])  # Bob</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Save/Load JSON Files</h4>
+                <pre><code>import json
+
+# Save to file
+data = {"users": [{"name": "Alice"}, {"name": "Bob"}]}
+with open("data.json", "w") as f:
+    json.dump(data, f, indent=2)
+
+# Load from file
+with open("data.json", "r") as f:
+    loaded = json.load(f)
+print(loaded)</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: JSON is essential for data storage and APIs</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-25" class="nav-btn">← Previous</a>
+                    <a href="#lesson-27" class="nav-btn">Continue to Lesson 27 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 27 ==================== -->
+            <div id="lesson-27" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-indigo-600 uppercase">Lesson 27</span>
+                        <h3 class="text-3xl font-black mt-2">*args and **kwargs 🎁</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">12 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Accept any number of arguments in your functions!</p>
+                
+                <h4 class="text-xl font-bold mb-3">*args - Multiple Arguments</h4>
+                <pre><code>def add_all(*args):
+    return sum(args)
+
+print(add_all(1, 2))           # 3
+print(add_all(1, 2, 3, 4, 5))  # 15</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">**kwargs - Keyword Arguments</h4>
+                <pre><code>def print_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+print_info(name="Alice", age=25, city="NYC")
+# name: Alice
+# age: 25
+# city: NYC</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Combining Both</h4>
+                <pre><code>def super_function(*args, **kwargs):
+    print("Args:", args)
+    print("Kwargs:", kwargs)
+
+super_function(1, 2, 3, name="Python", version=3)</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: *args and **kwargs make functions flexible</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-26" class="nav-btn">← Previous</a>
+                    <a href="#lesson-28" class="nav-btn">Continue to Lesson 28 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 28 ==================== -->
+            <div id="lesson-28" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-pink-600 uppercase">Lesson 28</span>
+                        <h3 class="text-3xl font-black mt-2">Decorators 🎀</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">18 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Decorators modify functions without changing their code!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Basic Decorator</h4>
+                <pre><code>def my_decorator(func):
+    def wrapper():
+        print("Before function")
+        func()
+        print("After function")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+say_hello()
+# Before function
+# Hello!
+# After function</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Practical Example: Timer</h4>
+                <pre><code>import time
+
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"{func.__name__} took {end-start:.4f} seconds")
+        return result
+    return wrapper
+
+@timer
+def slow_function():
+    time.sleep(1)
+    print("Done!")
+
+slow_function()  # Done! + time info</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Decorators add functionality to functions</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-27" class="nav-btn">← Previous</a>
+                    <a href="#lesson-29" class="nav-btn">Continue to Lesson 29 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 29 ==================== -->
+            <div id="lesson-29" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-teal-600 uppercase">Lesson 29</span>
+                        <h3 class="text-3xl font-black mt-2">Generators 🔄</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">15 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Generators produce values one at a time, saving memory!</p>
+                
+                <h4 class="text-xl font-bold mb-3">Generator Function</h4>
+                <pre><code>def count_up(n):
+    i = 1
+    while i <= n:
+        yield i  # yield instead of return
+        i += 1
+
+for num in count_up(5):
+    print(num)  # 1, 2, 3, 4, 5</code></pre>
+                
+                <h4 class="text-xl font-bold mb-3">Generator Expression</h4>
+                <pre><code># List comprehension (creates full list in memory)
+squares_list = [x**2 for x in range(1000000)]
+
+# Generator expression (creates values on demand)
+squares_gen = (x**2 for x in range(1000000))
+
+# Use next() to get values
+gen = (x**2 for x in range(5))
+print(next(gen))  # 0
+print(next(gen))  # 1</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Generators are memory-efficient iterators</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-28" class="nav-btn">← Previous</a>
+                    <a href="#lesson-30" class="nav-btn">Continue to Lesson 30 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSON 30 ==================== -->
+            <div id="lesson-30" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-amber-600 uppercase">Lesson 30</span>
+                        <h3 class="text-3xl font-black mt-2">🎮 Project: Rock Paper Scissors</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">30 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Build a complete game with everything you've learned!</p>
+                
+                <pre><code>import random
+
+def get_choice():
+    choices = {"r": "rock", "p": "paper", "s": "scissors"}
+    while True:
+        user = input("Rock (r), Paper (p), Scissors (s): ").lower()
+        if user in choices:
+            return choices[user]
+        print("Invalid choice!")
+
+def determine_winner(user, computer):
+    if user == computer:
+        return "tie"
+    wins = {"rock": "scissors", "paper": "rock", "scissors": "paper"}
+    return "user" if wins[user] == computer else "computer"
+
+def play():
+    scores = {"user": 0, "computer": 0}
+    
+    print("🎮 ROCK PAPER SCISSORS")
+    print("First to 3 wins!\n")
+    
+    while max(scores.values()) < 3:
+        user = get_choice()
+        computer = random.choice(["rock", "paper", "scissors"])
+        
+        print(f"You: {user} | Computer: {computer}")
+        
+        winner = determine_winner(user, computer)
+        if winner == "tie":
+            print("Tie!\n")
+        else:
+            scores[winner] += 1
+            print(f"{winner.title()} wins! Score: {scores}\n")
+    
+    final = "You win! 🎉" if scores["user"] > scores["computer"] else "Computer wins!"
+    print(final)
+
+play()</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">🎉 60% Complete! You've built another real game!</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-29" class="nav-btn">← Previous</a>
+                    <a href="#lesson-31" class="nav-btn">Continue to Lesson 31 →</a>
+                </div>
+            </div>
+
+            <!-- ==================== LESSONS 31-50 (Abbreviated for space) ==================== -->
+            
+            <!-- LESSON 31 -->
+            <div id="lesson-31" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-blue-600 uppercase">Lesson 31</span>
+                        <h3 class="text-3xl font-black mt-2">Regular Expressions (Regex) 🔍</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">20 min</span>
+                </div>
+                
+                <p class="text-lg mb-6">Pattern matching superpowers for text!</p>
+                
+                <pre><code>import re
+
+# Find patterns
+text = "My email is test@email.com"
+match = re.search(r'\S+@\S+', text)
+print(match.group())  # test@email.com
+
+# Find all matches
+text = "Call 123-456-7890 or 987-654-3210"
+phones = re.findall(r'\d{3}-\d{3}-\d{4}', text)
+print(phones)  # ['123-456-7890', '987-654-3210']
+
+# Replace patterns
+result = re.sub(r'\d', 'X', "My number is 12345")
+print(result)  # My number is XXXXX</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Regex finds and manipulates text patterns</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-30" class="nav-btn">← Previous</a>
+                    <a href="#lesson-32" class="nav-btn">Continue to Lesson 32 →</a>
+                </div>
+            </div>
+
+            <!-- LESSON 32 -->
+            <div id="lesson-32" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-green-600 uppercase">Lesson 32</span>
+                        <h3 class="text-3xl font-black mt-2">Virtual Environments 🏠</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">12 min</span>
+                </div>
+                
+                <pre><code># Create virtual environment
+python -m venv myenv
+
+# Activate (Windows)
+myenv\Scripts\activate
+
+# Activate (Mac/Linux)
+source myenv/bin/activate
+
+# Install packages
+pip install requests
+
+# Save requirements
+pip freeze > requirements.txt
+
+# Install from requirements
+pip install -r requirements.txt
+
+# Deactivate
+deactivate</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Virtual environments isolate project dependencies</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-31" class="nav-btn">← Previous</a>
+                    <a href="#lesson-33" class="nav-btn">Continue to Lesson 33 →</a>
+                </div>
+            </div>
+
+            <!-- LESSON 33 -->
+            <div id="lesson-33" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-purple-600 uppercase">Lesson 33</span>
+                        <h3 class="text-3xl font-black mt-2">HTTP Requests (APIs) 🌐</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">18 min</span>
+                </div>
+                
+                <pre><code>import requests
+
+# GET request
+response = requests.get("https://api.github.com")
+print(response.status_code)  # 200
+print(response.json())
+
+# With parameters
+params = {"q": "python", "sort": "stars"}
+response = requests.get("https://api.github.com/search/repositories", params=params)
+
+# POST request
+data = {"name": "Alice", "email": "alice@email.com"}
+response = requests.post("https://httpbin.org/post", json=data)
+print(response.json())</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Connect to web APIs with requests</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-32" class="nav-btn">← Previous</a>
+                    <a href="#lesson-34" class="nav-btn">Continue to Lesson 34 →</a>
+                </div>
+            </div>
+
+            <!-- LESSON 34 -->
+            <div id="lesson-34" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-orange-600 uppercase">Lesson 34</span>
+                        <h3 class="text-3xl font-black mt-2">Web Scraping 🕷️</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">20 min</span>
+                </div>
+                
+                <pre><code>from bs4 import BeautifulSoup
+import requests
+
+# Get webpage
+url = "https://example.com"
+response = requests.get(url)
+soup = BeautifulSoup(response.text, "html.parser")
+
+# Find elements
+title = soup.find("h1").text
+links = soup.find_all("a")
+
+for link in links:
+    print(link.get("href"))
+
+# Find by class
+items = soup.find_all("div", class_="item")
+
+# Find by ID
+header = soup.find(id="header")</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Extract data from websites</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-33" class="nav-btn">← Previous</a>
+                    <a href="#lesson-35" class="nav-btn">Continue to Lesson 35 →</a>
+                </div>
+            </div>
+
+            <!-- LESSON 35 -->
+            <div id="lesson-35" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-cyan-600 uppercase">Lesson 35</span>
+                        <h3 class="text-3xl font-black mt-2">SQLite Databases 🗄️</h3>
+                    </div>
+                    <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold">25 min</span>
+                </div>
+                
+                <pre><code>import sqlite3
+
+# Connect (creates file if not exists)
+conn = sqlite3.connect("mydata.db")
+cursor = conn.cursor()
+
+# Create table
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY,
+        name TEXT,
+        email TEXT
+    )
+""")
+
+# Insert data
+cursor.execute("INSERT INTO users (name, email) VALUES (?, ?)", 
+               ("Alice", "alice@email.com"))
+conn.commit()
+
+# Query data
+cursor.execute("SELECT * FROM users")
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+
+conn.close()</code></pre>
+                
+                <div class="success-box">
+                    <p class="font-bold">✅ You learned: Store data in SQLite databases</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#lesson-34" class="nav-btn">← Previous</a>
+                    <a href="#lesson-36" class="nav-btn">Continue to Lesson 36 →</a>
+                </div>
+            </div>
+
+            <!-- LESSON 36-49 (Quick versions) -->
+            <div id="lesson-36" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <span class="text-sm font-bold text-indigo-600">Lesson 36</span>
+                <h3 class="text-2xl font-black">Unit Testing with pytest ✅</h3>
+                <pre><code># test_math.py
+def add(a, b):
+    return a + b
+
+def test_add():
+    assert add(2, 3) == 5
+    assert add(-1, 1) == 0
+
+# Run: pytest test_math.py</code></pre>
+                <div class="mt-4 text-center"><a href="#lesson-37" class="nav-btn">Next →</a></div>
+            </div>
+
+            <div id="lesson-37" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <span class="text-sm font-bold text-pink-600">Lesson 37</span>
+                <h3 class="text-2xl font-black">Command Line Arguments 💻</h3>
+                <pre><code>import sys
+import argparse
+
+# Simple way
+print(sys.argv)
+
+# Better way
+parser = argparse.ArgumentParser()
+parser.add_argument("name")
+parser.add_argument("--age", type=int, default=0)
+args = parser.parse_args()
+print(f"Hello {args.name}, age {args.age}")</code></pre>
+                <div class="mt-4 text-center"><a href="#lesson-38" class="nav-btn">Next →</a></div>
+            </div>
+
+            <div id="lesson-38" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <span class="text-sm font-bold text-teal-600">Lesson 38</span>
+                <h3 class="text-2xl font-black">Logging 📝</h3>
+                <pre><code>import logging
+
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
+logger.debug("Debug message")
+logger.info("Info message")
+logger.warning("Warning message")
+logger.error("Error message")</code></pre>
+                <div class="mt-4 text-center"><a href="#lesson-39" class="nav-btn">Next →</a></div>
+            </div>
+
+            <div id="lesson-39" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <span class="text-sm font-bold text-amber-600">Lesson 39</span>
+                <h3 class="text-2xl font-black">Context Managers (with) 🔐</h3>
+                <pre><code>class FileManager:
+    def __init__(self, filename):
+        self.filename = filename
+    
+    def __enter__(self):
+        self.file = open(self.filename, 'w')
+        return self.file
+    
+    def __exit__(self, *args):
+        self.file.close()
+
+with FileManager("test.txt") as f:
+    f.write("Hello!")</code></pre>
+                <div class="mt-4 text-center"><a href="#lesson-40" class="nav-btn">Next →</a></div>
+            </div>
+
+            <div id="lesson-40" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <span class="text-sm font-bold text-red-600">Lesson 40</span>
+                <h3 class="text-2xl font-black">🎮 Project: Todo List CLI</h3>
+                <pre><code>import json
+
+def load_todos():
+    try:
+        with open("todos.json") as f:
+            return json.load(f)
+    except:
+        return []
+
+def save_todos(todos):
+    with open("todos.json", "w") as f:
+        json.dump(todos, f)
+
+def main():
+    todos = load_todos()
+    while True:
+        print("\n1. Add  2. View  3. Delete  4. Quit")
+        choice = input("Choice: ")
+        if choice == "1":
+            todos.append(input("Todo: "))
+            save_todos(todos)
+        elif choice == "2":
+            for i, t in enumerate(todos, 1):
+                print(f"{i}. {t}")
+        elif choice == "3":
+            idx = int(input("Number to delete: ")) - 1
+            todos.pop(idx)
+            save_todos(todos)
+        elif choice == "4":
+            break
+
+main()</code></pre>
+                <div class="mt-4 text-center"><a href="#lesson-41" class="nav-btn">Next →</a></div>
+            </div>
+
+            <div id="lesson-41" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <span class="text-sm font-bold text-blue-600">Lesson 41</span>
+                <h3 class="text-2xl font-black">Concurrency: Threading 🧵</h3>
+                <pre><code>import threading
+import time
+
+def task(name):
+    print(f"{name} starting")
+    time.sleep(2)
+    print(f"{name} done")
+
+t1 = threading.Thread(target=task, args=("Task 1",))
+t2 = threading.Thread(target=task, args=("Task 2",))
+
+t1.start()
+t2.start()
+t1.join()
+t2.join()</code></pre>
+                <div class="mt-4 text-center"><a href="#lesson-42" class="nav-btn">Next →</a></div>
+            </div>
+
+            <div id="lesson-42" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <span class="text-sm font-bold text-green-600">Lesson 42</span>
+                <h3 class="text-2xl font-black">Async/Await ⚡</h3>
+                <pre><code>import asyncio
+
+async def fetch_data(name, delay):
+    print(f"Fetching {name}...")
+    await asyncio.sleep(delay)
+    print(f"{name} done!")
+    return f"{name} data"
+
+async def main():
+    results = await asyncio.gather(
+        fetch_data("A", 2),
+        fetch_data("B", 1),
+        fetch_data("C", 3)
+    )
+    print(results)
+
+asyncio.run(main())</code></pre>
+                <div class="mt-4 text-center"><a href="#lesson-43" class="nav-btn">Next →</a></div>
+            </div>
+
+            <div id="lesson-43" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <span class="text-sm font-bold text-purple-600">Lesson 43</span>
+                <h3 class="text-2xl font-black">Type Hints 📋</h3>
+                <pre><code>def greet(name: str) -> str:
+    return f"Hello, {name}"
+
+def add(a: int, b: int) -> int:
+    return a + b
+
+def process(items: list[str]) -> dict[str, int]:
+    return {item: len(item) for item in items}
+
+from typing import Optional
+def find(data: list, key: str) -> Optional[str]:
+    return data.get(key)</code></pre>
+                <div class="mt-4 text-center"><a href="#lesson-44" class="nav-btn">Next →</a></div>
+            </div>
+
+            <div id="lesson-44" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <span class="text-sm font-bold text-orange-600">Lesson 44</span>
+                <h3 class="text-2xl font-black">Dataclasses 📦</h3>
+                <pre><code>from dataclasses import dataclass
+
+@dataclass
+class Person:
+    name: str
+    age: int
+    email: str = ""
+
+p1 = Person("Alice", 25)
+p2 = Person("Bob", 30, "bob@email.com")
+
+print(p1)  # Person(name='Alice', age=25, email='')
+print(p1 == Person("Alice", 25))  # True</code></pre>
+                <div class="mt-4 text-center"><a href="#lesson-45" class="nav-btn">Next →</a></div>
+            </div>
+
+            <div id="lesson-45" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <span class="text-sm font-bold text-cyan-600">Lesson 45</span>
+                <h3 class="text-2xl font-black">Pathlib (Modern File Paths) 📁</h3>
+                <pre><code>from pathlib import Path
+
+# Create path
+p = Path("folder/subfolder/file.txt")
+
+# Path operations
+print(p.name)      # file.txt
+print(p.stem)      # file
+print(p.suffix)    # .txt
+print(p.parent)    # folder/subfolder
+
+# List files
+for f in Path(".").glob("*.py"):
+    print(f)
+
+# Read/Write
+Path("test.txt").write_text("Hello!")
+content = Path("test.txt").read_text()</code></pre>
+                <div class="mt-4 text-center"><a href="#lesson-46" class="nav-btn">Next →</a></div>
+            </div>
+
+            <div id="lesson-46" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <span class="text-sm font-bold text-indigo-600">Lesson 46</span>
+                <h3 class="text-2xl font-black">Enumerate & Zip 🔗</h3>
+                <pre><code># enumerate - get index + value
+fruits = ["apple", "banana", "orange"]
+for i, fruit in enumerate(fruits):
+    print(f"{i}: {fruit}")
+
+# zip - combine lists
+names = ["Alice", "Bob"]
+ages = [25, 30]
+for name, age in zip(names, ages):
+    print(f"{name} is {age}")
+
+# Unzip
+pairs = [("a", 1), ("b", 2)]
+letters, numbers = zip(*pairs)</code></pre>
+                <div class="mt-4 text-center"><a href="#lesson-47" class="nav-btn">Next →</a></div>
+            </div>
+
+            <div id="lesson-47" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <span class="text-sm font-bold text-pink-600">Lesson 47</span>
+                <h3 class="text-2xl font-black">Collections Module 📚</h3>
+                <pre><code>from collections import Counter, defaultdict, deque
+
+# Counter
+words = ["a", "b", "a", "c", "a", "b"]
+count = Counter(words)
+print(count.most_common(2))  # [('a', 3), ('b', 2)]
+
+# defaultdict
+dd = defaultdict(list)
+dd["fruits"].append("apple")
+
+# deque (fast append/pop both ends)
+dq = deque([1, 2, 3])
+dq.appendleft(0)
+dq.pop()</code></pre>
+                <div class="mt-4 text-center"><a href="#lesson-48" class="nav-btn">Next →</a></div>
+            </div>
+
+            <div id="lesson-48" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <span class="text-sm font-bold text-teal-600">Lesson 48</span>
+                <h3 class="text-2xl font-black">Flask Basics (Web Framework) 🌐</h3>
+                <pre><code>from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello, World!"
+
+@app.route("/api/greet/&lt;name&gt;")
+def greet(name):
+    return jsonify({"message": f"Hello, {name}!"})
+
+@app.route("/api/add", methods=["POST"])
+def add():
+    data = request.json
+    result = data["a"] + data["b"]
+    return jsonify({"result": result})
+
+if __name__ == "__main__":
+    app.run(debug=True)</code></pre>
+                <div class="mt-4 text-center"><a href="#lesson-49" class="nav-btn">Next →</a></div>
+            </div>
+
+            <div id="lesson-49" class="lesson-card bg-white rounded-2xl p-8 mb-8 shadow-xl">
+                <span class="text-sm font-bold text-amber-600">Lesson 49</span>
+                <h3 class="text-2xl font-black">Environment Variables 🔐</h3>
+                <pre><code>import os
+from dotenv import load_dotenv
+
+# Load .env file
+load_dotenv()
+
+# Get environment variables
+api_key = os.getenv("API_KEY")
+debug = os.getenv("DEBUG", "False") == "True"
+
+# .env file example:
+# API_KEY=your_secret_key
+# DEBUG=True
+# DATABASE_URL=postgresql://...</code></pre>
+                <div class="mt-4 text-center"><a href="#lesson-50" class="nav-btn">Final Lesson →</a></div>
+            </div>
+
+            <!-- ==================== LESSON 50 - FINAL ==================== -->
+            <div id="lesson-50" class="lesson-card bg-gradient-to-br from-purple-100 via-pink-100 to-red-100 rounded-2xl p-8 mb-8 shadow-xl border-4 border-purple-400">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-sm font-bold text-purple-600 uppercase">🎓 FINAL LESSON 50</span>
+                        <h3 class="text-4xl font-black mt-2 gradient-text">Final Project: Build a Complete App! 🚀</h3>
+                    </div>
+                    <span class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-bold">CAPSTONE</span>
+                </div>
+                
+                <p class="text-xl mb-6">Combine everything you've learned into one powerful application!</p>
+                
+                <h4 class="text-2xl font-bold mb-4">📱 Contact Manager App</h4>
+                
+                <pre><code>import json
+from pathlib import Path
+from datetime import datetime
+
+class ContactManager:
+    def __init__(self, filename="contacts.json"):
+        self.file = Path(filename)
+        self.contacts = self.load()
+    
+    def load(self):
+        if self.file.exists():
+            return json.loads(self.file.read_text())
+        return {}
+    
+    def save(self):
+        self.file.write_text(json.dumps(self.contacts, indent=2))
+    
+    def add(self, name, phone, email=""):
+        self.contacts[name] = {
+            "phone": phone,
+            "email": email,
+            "created": datetime.now().isoformat()
+        }
+        self.save()
+        print(f"✅ Added {name}")
+    
+    def search(self, query):
+        results = [n for n in self.contacts if query.lower() in n.lower()]
+        return results
+    
+    def delete(self, name):
+        if name in self.contacts:
+            del self.contacts[name]
+            self.save()
+            print(f"❌ Deleted {name}")
+    
+    def list_all(self):
+        for name, info in self.contacts.items():
+            print(f"\n📞 {name}")
+            print(f"   Phone: {info['phone']}")
+            print(f"   Email: {info.get('email', 'N/A')}")
+
+def main():
+    cm = ContactManager()
+    
+    while True:
+        print("\n=== CONTACT MANAGER ===")
+        print("1. Add contact")
+        print("2. Search contacts")
+        print("3. List all contacts")
+        print("4. Delete contact")
+        print("5. Exit")
+        
+        choice = input("\nChoice: ")
+        
+        if choice == "1":
+            name = input("Name: ")
+            phone = input("Phone: ")
+            email = input("Email (optional): ")
+            cm.add(name, phone, email)
+        elif choice == "2":
+            query = input("Search: ")
+            results = cm.search(query)
+            print(f"Found: {results}")
+        elif choice == "3":
+            cm.list_all()
+        elif choice == "4":
+            name = input("Name to delete: ")
+            cm.delete(name)
+        elif choice == "5":
+            print("Goodbye! 👋")
+            break
+
+if __name__ == "__main__":
+    main()</code></pre>
+                
+                <div class="bg-gradient-to-r from-green-400 to-emerald-500 text-white rounded-xl p-6 mt-8 shadow-lg">
+                    <h4 class="text-3xl font-black mb-4">🎉 CONGRATULATIONS!</h4>
+                    <p class="text-xl mb-4">You've completed all 50 lessons of PythonFromZero!</p>
+                    <p class="mb-4">You now know:</p>
+                    <ul class="grid md:grid-cols-2 gap-2 mb-4">
+                        <li>✅ Variables & Data Types</li>
+                        <li>✅ Control Flow (if/loops)</li>
+                        <li>✅ Functions & Classes</li>
+                        <li>✅ File Handling</li>
+                        <li>✅ Error Handling</li>
+                        <li>✅ Modules & Packages</li>
+                        <li>✅ APIs & Web Scraping</li>
+                        <li>✅ Databases</li>
+                        <li>✅ Testing</li>
+                        <li>✅ Speed Coding Techniques</li>
+                    </ul>
+                    <p class="text-2xl font-bold">You are now a Python Developer! 🐍🏆</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <a href="#top" class="nav-btn bg-gradient-to-r from-purple-500 to-pink-500">🏠 Back to Top</a>
+                    <a href="#lesson-1" class="nav-btn">Review from Start</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h3 class="text-4xl font-black mb-4 gradient-text">PythonFromZero</h3>
+            <p class="text-xl text-slate-400 mb-4">50 Complete Lessons • From Zero to Hero • 100% Free</p>
+            <p class="text-slate-500">&copy; 2024 PythonFromZero • Built with ❤️ for learners worldwide</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
